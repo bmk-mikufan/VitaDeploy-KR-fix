@@ -1,6 +1,9 @@
 # VitaDeploy
 Toolbox that makes homebrewing the Playstation Vita/TV easier
 
+##It was moded by me for korean oled models(can't use near)
+
+
 ![ref0](https://github.com/SKGleba/VitaDeploy/raw/main/screenshots/main_menu.png)
 
 ## Features
