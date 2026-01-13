@@ -64,7 +64,7 @@ static int start_preloaded_modules_patched(SceUID pid) {
     int ret = TAI_CONTINUE(int, g_start_preloaded_modules_hook, pid);
     if (!patched) {
         if (ksceKernelLoadStartModuleForPid(pid, "ux0:app/SKGD3PL0Y/plugins/cfgu_v05.suprx", 0, NULL, 0, NULL, NULL) < 0) {
-            ksceKernelLoadStartModuleForPid(pid, "vs0:app/NPXS10000/plugins/cfgu_v05.suprx", 0, NULL, 0, NULL, NULL);
+            ksceKernelLoadStartModuleForPid(pid, "vs0:app/NPXS10001/plugins/cfgu_v05.suprx", 0, NULL, 0, NULL, NULL);
             loc = 1;
         }
         patched = 1;

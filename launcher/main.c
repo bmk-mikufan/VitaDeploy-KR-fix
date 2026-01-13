@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
     argg.flags = 0;
     uint32_t ls = taiLoadStartKernelModuleForUser("ux0:app/SKGD3PL0Y/plugins/cfgk_v05.skprx", &argg);  // first try ux0
     if (ls == 0x80010002 || ls == 0x80010013)                                                          // not found
-        ls = taiLoadStartKernelModuleForUser("vs0:app/NPXS10000/plugins/cfgk_v05.skprx", &argg);       // try vs0
+        ls = taiLoadStartKernelModuleForUser("vs0:app/NPXS10001/plugins/cfgk_v05.skprx", &argg);       // try vs0
 
     sceClibPrintf("load_kernel: 0x%X\n", ls);
 

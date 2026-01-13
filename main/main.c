@@ -360,11 +360,11 @@ void vs0install(void) {
             sceIoMkdir("ux0:temp/", 0777);
             removeDir("ux0:temp/app");
             sceIoMkdir("ux0:temp/app", 0777);
-            int ret = copyDir("vs0:app/NPXS10000/near_backup", "ux0:temp/app");
+            int ret = copyDir("vs0:app/NPXS10001/near_backup", "ux0:temp/app");
             if (ret < 0)
                 dead("Could not prepare NEAR for restore!\n");
             printf("Removing VitaDeploy..\n");
-            ret = removeDir("vs0:app/NPXS10000");
+            ret = removeDir("vs0:app/NPXS10001");
             if (ret < 0) {
                 printf("Failed 0x%08X, rebooting in 5s\n", ret);
                 sceKernelDelayThread(5 * 1000 * 1000);
@@ -373,7 +373,7 @@ void vs0install(void) {
                 dead("You really should not be seeing this\n");
             }
             printf("Restoring NEAR..\n");
-            ret = copyDir("ux0:temp/app", "vs0:app/NPXS10000");
+            ret = copyDir("ux0:temp/app", "vs0:app/NPXS10001");
             if (ret < 0)
                 dead("NEAR restore failed!\n");
             printf("Removing the application database\n");
@@ -403,9 +403,9 @@ void vs0install(void) {
         dead("VitaDeploy backup failed!\n");
 
     printf("Backing up NEAR\n");
-    res = copyDir("vs0:app/NPXS10000/near_backup", "ux0:temp/app/near_backup");  // if we are updating VitaDeploy, the backup is already there
+    res = copyDir("vs0:app/NPXS10001/near_backup", "ux0:temp/app/near_backup");  // if we are updating VitaDeploy, the backup is already there
     if (res < 0) {
-        res = copyDir("vs0:app/NPXS10000", "ux0:temp/app/near_backup");
+        res = copyDir("vs0:app/NPXS10001", "ux0:temp/app/near_backup");
         if (res < 0)
             dead("NEAR backup failed!\n");
     }
@@ -415,8 +415,8 @@ void vs0install(void) {
     sceIoRename("ux0:temp/app/sce_sys/vs.sfo", "ux0:temp/app/sce_sys/param.sfo");
 
     printf("Replacing NEAR\n");
-    removeDir("vs0:app/NPXS10000");
-    res = copyDir("ux0:temp/app", "vs0:app/NPXS10000");
+    removeDir("vs0:app/NPXS10001");
+    res = copyDir("ux0:temp/app", "vs0:app/NPXS10001");
     if (res < 0)
         dead("Could not replace NEAR!\n");
 

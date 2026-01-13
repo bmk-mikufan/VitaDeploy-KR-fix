@@ -153,7 +153,7 @@ static int OnButtonEventSettings_patched(const char *id, int a2, void *a3) {
         argg.size = sizeof(argg);
         argg.pid = KERNEL_PID;
         if (taiLoadStartKernelModuleForUser(
-                (vdKUcmd(CFGK_BRIDGE_GET_LOC, 0)) ? "vs0:app/NPXS10000/plugins/naavls.skprx" : "ux0:app/SKGD3PL0Y/plugins/naavls.skprx", &argg) < 0)
+                (vdKUcmd(CFGK_BRIDGE_GET_LOC, 0)) ? "vs0:app/NPXS10001/plugins/naavls.skprx" : "ux0:app/SKGD3PL0Y/plugins/naavls.skprx", &argg) < 0)
             return -1;
         return 0;
     } else if (sceClibStrncmp(id, "id_ia", 5) == 0) {
