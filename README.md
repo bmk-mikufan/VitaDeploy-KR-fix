@@ -1,3 +1,7 @@
+한국 비타는 near 앱이 사용 불가하기 때문에, 
+
+
+
 # VitaDeploy
 Toolbox that makes homebrewing the Playstation Vita/TV easier
 
